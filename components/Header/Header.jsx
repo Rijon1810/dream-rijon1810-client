@@ -2,7 +2,7 @@ import BrandImage from "@/components/BrandImage";
 import ButtonOutline from "@/components/Button/ButtonOutline";
 import NavLink from "@/components/Header/NavLink";
 import MobileNavigation from "@/components/Header/MobileNavigation";
-import SignIn from "@/components/Button/SignIn";
+import SignIn from "@/components/SignIn";
 import { useEffect, useState } from "react";
 
 const Header = () => {
