@@ -38,34 +38,34 @@ const Header = () => {
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             >
-              About
+              It's Rijon
             </NavLink>
             <NavLink
-              to="feature"
+              to="projects"
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             >
-              Feature
+              Projects
             </NavLink>
             <NavLink
-              to="pricing"
+              to="blog"
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             >
-              Pricing
+              Blog
             </NavLink>
             <NavLink
-              to="testimoni"
+              to="merchandise"
               activeLink={activeLink}
               setActiveLink={setActiveLink}
             >
-              Testimonial
+              Merchandise
             </NavLink>
           </ul>
-          <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
+          {/* <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
             <SignIn />
             <ButtonOutline>Sign Up</ButtonOutline>
-          </div>
+          </div> */}
         </nav>
       </header>
 
