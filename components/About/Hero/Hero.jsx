@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useMemo } from "react";
 import ButtonPrimary from "@/components/Button/ButtonPrimary";
 import ScrollAnimationWrapper from "@/layouts/ScrollAnimationWrapper";
 import getScrollAnimation from "@/utils/getScrollAnimation";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { useMemo } from "react";
 
 const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -27,8 +27,8 @@ const Hero = () => {
           </h1>
           <p className="text-black-500 mt-4 mb-6">
             I'm a <strong>Software Engineer</strong> at
-            <strong>Jatri Service Limited</strong>, specializing in frontend web
-            development. Currently, I'm focused on building a robust and
+            <strong> Jatri Service Limited</strong>, specializing in frontend
+            web development. Currently, I'm focused on building a robust and
             flexible <strong>frontend component library</strong> and optimizing
             performance for our projects.
           </p>

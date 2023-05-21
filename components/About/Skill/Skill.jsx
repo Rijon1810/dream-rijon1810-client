@@ -1,8 +1,8 @@
-import { useMemo } from "react";
-import { motion } from "framer-motion";
+import SkillCard from "@/components/About/Skill/SkillCard";
 import ScrollAnimationWrapper from "@/layouts/ScrollAnimationWrapper";
 import getScrollAnimation from "@/utils/getScrollAnimation";
-import SkillCard from "@/components/About/Skill/SkillCard";
+import { motion } from "framer-motion";
+import { useMemo } from "react";
 
 const Skill = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -10,35 +10,35 @@ const Skill = () => {
   const skillList = [
     {
       name: "React JS",
-      iconPath: "",
+      iconPath: "/assets/icon/react.png",
     },
     {
       name: "Next JS",
-      iconPath: "",
+      iconPath: "/assets/icon/next.png",
     },
     {
-      name: "Tailwind",
-      iconPath: "",
+      name: "Tailwind CSS",
+      iconPath: "/assets/icon/tailwindcss.png",
     },
     {
       name: "Jest",
-      iconPath: "",
+      iconPath: "/assets/icon/jest.png",
     },
     {
       name: "Storybook",
-      iconPath: "",
+      iconPath: "/assets/icon/storybook.png",
     },
     {
       name: "Sass",
-      iconPath: "",
+      iconPath: "/assets/icon/sass.png",
     },
     {
       name: "Git",
-      iconPath: "",
+      iconPath: "/assets/icon/git.png",
     },
     {
       name: "Figma",
-      iconPath: "",
+      iconPath: "/assets/icon/figma.png",
     },
   ];
 
