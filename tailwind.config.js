@@ -41,7 +41,13 @@ module.exports = {
         500: "#DDDDDD",
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#F53855",
+        secondary: "#F3405F",
+        thirdly: "#F6A3AF",
+      },
+    },
   },
   variants: {
     extend: {

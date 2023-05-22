@@ -1,9 +1,10 @@
-import ButtonPrimary from "@/components/Button/ButtonPrimary";
-import ScrollAnimationWrapper from "@/layouts/ScrollAnimationWrapper";
-import getScrollAnimation from "@/utils/getScrollAnimation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useMemo } from "react";
+import ButtonPrimary from "@/components/Button/ButtonPrimary";
+import ScrollAnimationWrapper from "@/layouts/ScrollAnimationWrapper";
+import getScrollAnimation from "@/utils/getScrollAnimation";
+
 
 const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
