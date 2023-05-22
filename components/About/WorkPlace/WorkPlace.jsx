@@ -15,18 +15,54 @@ const ExampleComponent = () => {
     {
       name: "Jatri",
       key: 0,
+      designation: "Software Engineer",
+      duration: "Dec 2022 - Present",
+      responsibility: [
+        "Enhanced the ticket searching feature with advanced filtering options for improved user experience.",
+        "Created dynamic sliders for auto-scrolling headlines, offers, promos, and blogs.",
+        "Integrated third-party APIs and revamped the UI for seamless integration.",
+        "Conducted code refactoring and component reuse to optimize development efficiency.",
+        "Ensured fast-loading performance of the website.",
+      ],
     },
 
     {
       name: "Shellbeehaken",
       key: 1,
+      designation: "Software Engineer",
+      duration: "Jan 2022 - Nov 2022",
+      responsibility: [
+        "Implemented pre-rendering techniques with static generation and server-side rendering.",
+        "Developed dynamic pagination, form validation, and animation features.",
+        "Added Google Analytics for tracking website traffic and user behavior.",
+        "Utilized Redux for efficient state management in Next.js projects.",
+        "Enhanced SEO compatibility through dynamic metadata generation.",
+      ],
     },
 
     {
       name: "MethodMelody",
       key: 2,
+      designation: "Software Developer",
+      duration: "Mar 2021 - Dec 2021",
+      responsibility: [
+        "Implemented a metronome feature to help musicians maintain steady time during practice sessions.",
+        "Developed a Freebies service offering various resources such as blogs, videos, FAQs, and images.",
+        "Integrated a feature-rich React video player to enhance the user experience.",
+        "Successfully integrated the SSL Commerz payment gateway for seamless and secure transactions.",
+        "Ensured codebase quality through diligent code reviewing.",
+      ],
     },
   ];
+
+  const companyDesignation = companyList[selectedCompany].designation;
+
+  const companyName = companyList[selectedCompany].name;
+
+  const jobDuration = companyList[selectedCompany].duration;
+
+  const jobResponsibility = companyList[selectedCompany].responsibility;
+
   return (
     <ScrollAnimationWrapper>
       <motion.div
@@ -34,7 +70,7 @@ const ExampleComponent = () => {
         variants={scrollAnimation}
       >
         <div className="text-xl lg:text-2xl xl:text-3xl font-medium text-black-600 leading-normal flex items-center justify-center py-10">
-          <h1 className="font-bold mb-10 md:mb-12 lg:mb-16 text-3xl leading-10 md:text-4xl lg:text-5xl text-center text-primary">
+          <h1 className="font-bold 8-10 md:mb-8 lg:mb-10 text-3xl leading-10 md:text-4xl lg:text-5xl text-center text-primary">
             Where I've Worked
           </h1>
         </div>
@@ -45,7 +81,9 @@ const ExampleComponent = () => {
                 <h1
                   key={company.key}
                   onClick={() => handleCompanySelect(company.key)}
-                  className="py-2 sm:py-3 px-6 sm:px-10 cursor-pointer hover:bg-thirdly font-bold md:font-semibold text-sm md:text-xl whitespace-nowrap mb-px transition-colors duration-300 text-secondary"
+                  className={`py-2 sm:py-3 px-6 sm:px-10 cursor-pointer hover:bg-thirdly font-bold md:font-semibold text-sm md:text-xl whitespace-nowrap mb-px transition-colors duration-300 text-secondary ${
+                    company.key === selectedCompany && "bg-thirdly"
+                  }`}
                 >
                   {company.name}
                 </h1>
@@ -57,7 +95,7 @@ const ExampleComponent = () => {
                 style={{
                   transform: `translateY(calc(${
                     selectedCompany * 100
-                  }% + 0px))`,
+                  }% + ${selectedCompany}px))`,
                   height: "52px",
                 }}
               ></div>
@@ -72,50 +110,27 @@ const ExampleComponent = () => {
               }}
             >
               <h2 className="font-bold text-lg leading-8 md:text-xl md:leading-9 mb-1">
-                Software Engineer (Deputy Team Lead)
+                {companyDesignation}
                 <a
                   className="text-primary"
                   href="https://welldev.io"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  @Welldev LTD
+                  @{companyName}
                 </a>
               </h2>
               <h3 className="text-light-gray text-base md:text-lg mb-3">
-                March, 2020 - Present
+                {jobDuration}
               </h3>
               <main className="text-base md:text-lg leading-9 md:leading-10">
                 <ul>
-                  <li className="flex">
-                    <span className="text-2xl mt-1 mr-2">▸</span>
-                    <span>
-                      Write performant code for different client and internal
-                      libraries
-                    </span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-2xl mt-1 mr-2">▸</span>
-                    <span>Build feasible component in React JS and SCSS</span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-2xl mt-1 mr-2">▸</span>
-                    <span>Write tests for React Components</span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-2xl mt-1 mr-2">▸</span>
-                    <span>
-                      Investigate performance issues of React component and
-                      optimize them
-                    </span>
-                  </li>
-                  <li className="flex">
-                    <span className="text-2xl mt-1 mr-2">▸</span>
-                    <span>
-                      Mentor trainee engineers and help other engineers in
-                      front-end tasks
-                    </span>
-                  </li>
+                  {jobResponsibility.map((item, index) => (
+                    <li className="flex" key={index}>
+                      <span className="text-2xl mt-1 mr-2">▸</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </main>
             </div>
