@@ -91,6 +91,13 @@ const Testimonial = ({
   };
   const [sliderRef, setSliderRef] = useState(null);
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
+
+  const recommendationLink =
+    "https://www.linkedin.com/in/rijon1810/edit/forms/recommendation/write/?profileFormEntryPoint=PROFILE_SECTION&trackingId=P5TDL3IET0CRdYnGo9W2kA%3D%3D";
+
+  const redirectToRecommendationLink = () => {
+    window.open(recommendationLink, "_blank");
+  };
   return (
     <div className="flex flex-col w-full my-4  bg-white-500">
       <h1 className="font-bold my-6 mb:my-8 lg:my-10 text-3xl leading-10 md:text-4xl lg:text-5xl text-center text-primary">
@@ -109,13 +116,15 @@ const Testimonial = ({
                 <div className="border-2 border-gray-500 hover:border-orange-500 transition-all rounded-lg p-8 flex flex-col">
                   <div className="flex flex-col xl:flex-row w-full items-stretch xl:items-center">
                     <div className="flex order-2 xl:order-1">
-                      <Image
-                        src={listTestimonis.image}
-                        height={50}
-                        width={50}
-                        alt="Icon People"
-                        className="rounded-full"
-                      />
+                      <div>
+                        <Image
+                          src={listTestimonis.image}
+                          height={50}
+                          width={50}
+                          alt="Icon People"
+                          className="rounded-full"
+                        />
+                      </div>
                       <div className="flex flex-col ml-5 text-left">
                         <p className="text-lg text-black-600 capitalize">
                           {listTestimonis.name}
@@ -165,7 +174,9 @@ const Testimonial = ({
         </motion.div>
       </ScrollAnimationWrapper>
       <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1">
-        <ButtonPrimary callBack={() => {}}>Send A Recommendation</ButtonPrimary>
+        <ButtonPrimary callBack={() => redirectToRecommendationLink()}>
+          Send A Recommendation
+        </ButtonPrimary>
       </div>
     </div>
   );
