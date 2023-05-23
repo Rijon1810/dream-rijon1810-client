@@ -11,7 +11,7 @@ const Testimonial = ({
     {
       name: "Tanjin Alam",
       image: "/assets/images/piash.jpg",
-      designation: "Blockchain Engineer",
+      designation: "Blockchain Engineer@Anchor Block",
       rating: "4.5",
       testimoni:
         "I highly recommend Rokibul Hasan Rijon, a smart and talented individual with a competitive programming background and extensive experience in various areas of software development. Rijon's exceptional problem-solving skills, deep understanding of algorithms, and ability to find efficient solutions. He has demonstrated versatility by successfully exploring mobile app development, web development, and backend technologies. Rijon's commitment to continuous learning, excellent communication skills, and dedication to staying up to date with the latest industry trends make him a valuable asset to any team or project. Overall, Rijon's exceptional abilities and drive for excellence make him an ideal candidate for any software development opportunity.",
@@ -19,7 +19,7 @@ const Testimonial = ({
     {
       name: "Sadique Ahmmod Rifat",
       image: "/assets/images/sadique.jpg",
-      designation: "Software Developer",
+      designation: "Software Developer@Red dot digital",
       rating: "4.5",
       testimoni:
         "While working with him, I found that he has some extraordinary problem solving skills which makes him a good software developer. He is also a quick learner, always tries to learn new things of his working stack, never wants to waste time on watching movies or films, rather he utilizes his leisure by watching different stack related tutorial. In a nutshell, he is a very passionate programmer and an honest hardworking guy.",
@@ -27,7 +27,7 @@ const Testimonial = ({
     {
       name: "Tanjin Alam",
       image: "/assets/images/piash.jpg",
-      designation: "Blockchain Engineer",
+      designation: "Blockchain Engineer@Anchor Block",
       rating: "4.5",
       testimoni:
         "I highly recommend Rokibul Hasan Rijon, a smart and talented individual with a competitive programming background and extensive experience in various areas of software development. Rijon's exceptional problem-solving skills, deep understanding of algorithms, and ability to find efficient solutions. He has demonstrated versatility by successfully exploring mobile app development, web development, and backend technologies. Rijon's commitment to continuous learning, excellent communication skills, and dedication to staying up to date with the latest industry trends make him a valuable asset to any team or project. Overall, Rijon's exceptional abilities and drive for excellence make him an ideal candidate for any software development opportunity.",
@@ -35,7 +35,7 @@ const Testimonial = ({
     {
       name: "Sadique Ahmmod Rifat",
       image: "/assets/images/sadique.jpg",
-      designation: "Software Developer",
+      designation: "Software Developer@Red dot digital",
       rating: "4.5",
       testimoni:
         "While working with him, I found that he has some extraordinary problem solving skills which makes him a good software developer. He is also a quick learner, always tries to learn new things of his working stack, never wants to waste time on watching movies or films, rather he utilizes his leisure by watching different stack related tutorial. In a nutshell, he is a very passionate programmer and an honest hardworking guy.",
@@ -54,7 +54,7 @@ const Testimonial = ({
     dotsClass: "slick-dots w-max absolute mt-20  ",
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 2,
     slidesToScroll: 2,
     responsive: [
       {
@@ -128,7 +128,7 @@ const Testimonial = ({
                   </div>
                   <div
                     className="mt-5 text-left custom-scrollbar"
-                    style={{ overflow: "auto", maxHeight: "200px" }}
+                    style={{ overflow: "auto", maxHeight: "150px" }}
                   >
                     <p>{listTestimonis.testimoni}</p>
                   </div>

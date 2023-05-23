@@ -2,6 +2,7 @@ import Hero from "@/components/About/Hero";
 import Skill from "@/components/About/Skill";
 import WorkPlace from "@/components/About/WorkPlace";
 import Testimonial from "@/components/About/Testimonial";
+import ProjectList from "../Projects/ProjectList";
 
 const About = () => {
   return (
@@ -9,6 +10,7 @@ const About = () => {
       <Hero />
       <Skill />
       <WorkPlace />
+      <ProjectList />
       <Testimonial />
     </div>
   );
