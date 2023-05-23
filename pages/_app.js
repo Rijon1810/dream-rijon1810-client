@@ -1,10 +1,8 @@
-import "@/styles/globals.css";
-
-export default function App({ Component, pageProps }) {
+import "@/styles/tailwind.css";
+import "@/styles/slick.css";
+import "@/styles/scrollbar.css";
+function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
 
-App.defaultProps = {
-  Component: null,
-  pageProps: {},
-};
+export default MyApp;
