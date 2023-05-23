@@ -4,9 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import ScrollAnimationWrapper from "@/layouts/ScrollAnimationWrapper";
 import getScrollAnimation from "@/utils/getScrollAnimation";
-import Stars from "../../../public/assets/icon/stars.svg";
-import ArrowBack from "../../../public/assets/icon/eva_arrow-back-fill.svg";
-import ArrowNext from "../../../public/assets/icon//eva_arrow-next-fill.svg";
+import ButtonPrimary from "@/components/Button/ButtonPrimary";
 
 const Testimonial = ({
   listTestimoni = [
@@ -60,9 +58,17 @@ const Testimonial = ({
     slidesToScroll: 2,
     responsive: [
       {
-        breakpoint: 770,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 770,
+        settings: {
+          slidesToShow: 1,
           slidesToScroll: 2,
           initialSlide: 2,
         },
@@ -74,12 +80,19 @@ const Testimonial = ({
           slidesToScroll: 1,
         },
       },
+      {
+        breakpoint: 320,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
     ],
   };
   const [sliderRef, setSliderRef] = useState(null);
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
   return (
-    <div className="flex flex-col w-full my-4">
+    <div className="flex flex-col w-full my-4  bg-white-500">
       <h1 className="font-bold my-6 mb:my-8 lg:my-10 text-3xl leading-10 md:text-4xl lg:text-5xl text-center text-primary">
         Thoughts about me
       </h1>
@@ -112,21 +125,13 @@ const Testimonial = ({
                         </p>
                       </div>
                     </div>
-                    {/* <div className="flex flex-none items-center ml-auto order-1 xl:order-2">
-                      <p className="text-sm">{listTestimonis.rating}</p>
-                      <span className="flex ml-4">
-                        <Image
-                          src="/assets/icon/stars.svg"
-                          height={16}
-                          width={16}
-                          alt="stars"
-                        />
-                      </span>
-                    </div> */}
                   </div>
-                  <p className="mt-5 text-left">
-                    “{listTestimonis.testimoni.substring(0, 200)}...”.
-                  </p>
+                  <div
+                    className="mt-5 text-left custom-scrollbar"
+                    style={{ overflow: "auto", maxHeight: "200px" }}
+                  >
+                    <p>{listTestimonis.testimoni}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -159,6 +164,9 @@ const Testimonial = ({
           </div>
         </motion.div>
       </ScrollAnimationWrapper>
+      <div className="flex flex-col justify-center items-center row-start-2 sm:row-start-1">
+        <ButtonPrimary callBack={() => {}}>Send A Recommendation</ButtonPrimary>
+      </div>
     </div>
   );
 };
