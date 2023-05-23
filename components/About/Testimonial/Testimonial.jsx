@@ -11,40 +11,36 @@ import ArrowNext from "../../../public/assets/icon//eva_arrow-next-fill.svg";
 const Testimonial = ({
   listTestimoni = [
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
+      name: "Tanjin Alam",
+      image: "/assets/images/piash.jpg",
+      designation: "Blockchain Engineer",
       rating: "4.5",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "I highly recommend Rokibul Hasan Rijon, a smart and talented individual with a competitive programming background and extensive experience in various areas of software development. Rijon's exceptional problem-solving skills, deep understanding of algorithms, and ability to find efficient solutions. He has demonstrated versatility by successfully exploring mobile app development, web development, and backend technologies. Rijon's commitment to continuous learning, excellent communication skills, and dedication to staying up to date with the latest industry trends make him a valuable asset to any team or project. Overall, Rijon's exceptional abilities and drive for excellence make him an ideal candidate for any software development opportunity.",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
+      name: "Sadique Ahmmod Rifat",
+      image: "/assets/images/sadique.jpg",
+      designation: "Software Developer",
       rating: "4.5",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "While working with him, I found that he has some extraordinary problem solving skills which makes him a good software developer. He is also a quick learner, always tries to learn new things of his working stack, never wants to waste time on watching movies or films, rather he utilizes his leisure by watching different stack related tutorial. In a nutshell, he is a very passionate programmer and an honest hardworking guy.",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
+      name: "Tanjin Alam",
+      image: "/assets/images/piash.jpg",
+      designation: "Blockchain Engineer",
       rating: "4.5",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "I highly recommend Rokibul Hasan Rijon, a smart and talented individual with a competitive programming background and extensive experience in various areas of software development. Rijon's exceptional problem-solving skills, deep understanding of algorithms, and ability to find efficient solutions. He has demonstrated versatility by successfully exploring mobile app development, web development, and backend technologies. Rijon's commitment to continuous learning, excellent communication skills, and dedication to staying up to date with the latest industry trends make him a valuable asset to any team or project. Overall, Rijon's exceptional abilities and drive for excellence make him an ideal candidate for any software development opportunity.",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
+      name: "Sadique Ahmmod Rifat",
+      image: "/assets/images/sadique.jpg",
+      designation: "Software Developer",
       rating: "4.5",
       testimoni:
-        "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+        "While working with him, I found that he has some extraordinary problem solving skills which makes him a good software developer. He is also a quick learner, always tries to learn new things of his working stack, never wants to waste time on watching movies or films, rather he utilizes his leisure by watching different stack related tutorial. In a nutshell, he is a very passionate programmer and an honest hardworking guy.",
     },
   ],
 }) => {
@@ -105,17 +101,18 @@ const Testimonial = ({
                         height={50}
                         width={50}
                         alt="Icon People"
+                        className="rounded-full"
                       />
                       <div className="flex flex-col ml-5 text-left">
                         <p className="text-lg text-black-600 capitalize">
                           {listTestimonis.name}
                         </p>
                         <p className="text-sm text-black-500 capitalize">
-                          {listTestimonis.city},{listTestimonis.country}
+                          {listTestimonis.designation}
                         </p>
                       </div>
                     </div>
-                    <div className="flex flex-none items-center ml-auto order-1 xl:order-2">
+                    {/* <div className="flex flex-none items-center ml-auto order-1 xl:order-2">
                       <p className="text-sm">{listTestimonis.rating}</p>
                       <span className="flex ml-4">
                         <Image
@@ -125,10 +122,10 @@ const Testimonial = ({
                           alt="stars"
                         />
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                   <p className="mt-5 text-left">
-                    “{listTestimonis.testimoni}”.
+                    “{listTestimonis.testimoni.substring(0, 200)}...”.
                   </p>
                 </div>
               </div>
