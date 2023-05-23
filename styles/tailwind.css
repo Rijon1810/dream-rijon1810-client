@@ -40,17 +40,17 @@ li.custom-list:before {
   top: -0.35em;
   @apply absolute block;
 }
-li.circle-check:before {
+/* li.circle-check:before {
   background-image: url("/assets/Icon/checklist.svg");
   left: -0.7em;
   top: -0.4em;
-}
-li.check:before {
+} */
+/* li.check:before {
   left: -0.5em;
   background-image: url("/assets/Icon/jam_check.svg");
   top: -0.5em;
   font-size: 400%;
-}
+} */
 /* Slideshow */
 .slick-dots li {
   @apply inline-block;
@@ -61,6 +61,24 @@ li.check:before {
 .slick-dots .slick-active span {
   @apply bg-orange-500 rounded-l-full rounded-r-full w-12;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
 
 /* purgecss end ignore */
 @tailwind utilities;
