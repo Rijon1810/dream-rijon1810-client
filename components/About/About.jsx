@@ -2,7 +2,7 @@ import Hero from "@/components/About/Hero";
 import Skill from "@/components/About/Skill";
 import WorkPlace from "@/components/About/WorkPlace";
 import Testimonial from "@/components/About/Testimonial";
-import ProjectList from "../Projects/ProjectList";
+import ProjectList from "@/components/Projects/ProjectList";
 
 const About = () => {
   return (
