@@ -14,22 +14,15 @@ const Footer = () => {
           className="sm:col-start-7 sm:col-end-9"
         />
         <FooterSection
-          title="Engage"
-          items={[
-            "Rijon ?",
-            "FAQ",
-            "Tutorials",
-            "About Us",
-            "Privacy Policy",
-            "Terms of Service",
-          ]}
+          title="My Contacts"
+          items={["Phone : 01616045887", "rijonstack@gmail.com"]}
           className="sm:col-start-9 sm:col-end-11"
         />
-        <FooterSection
+        {/* <FooterSection
           title="Earn Money"
           items={["Affiliate", "Become Partner"]}
           className=" sm:col-start-11 sm:col-end-13"
-        />
+        /> */}
       </div>
     </div>
   );
