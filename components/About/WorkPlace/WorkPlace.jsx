@@ -41,10 +41,10 @@ const ExampleComponent = () => {
     },
 
     {
-      name: "MethodMelody",
+      name: "Weabers",
       key: 2,
       designation: "Software Developer",
-      duration: "Mar 2021 - Dec 2021",
+      duration: "Jan 2021 - Dec 2021",
       responsibility: [
         "Implemented a metronome feature to help musicians maintain steady time during practice sessions.",
         "Developed a Freebies service offering various resources such as blogs, videos, FAQs, and images.",

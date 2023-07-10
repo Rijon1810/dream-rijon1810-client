@@ -6,7 +6,10 @@ import ProjectList from "@/components/Projects/ProjectList";
 
 const About = () => {
   return (
-    <div className="max-w-screen-xl mt-24 px-8 xl:px-16 mx-auto" id="about">
+    <div
+      className="max-w-screen-xl mx-auto"
+      id="about"
+    >
       <Hero />
       <Skill />
       <WorkPlace />
