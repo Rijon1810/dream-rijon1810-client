@@ -9,10 +9,10 @@ const ProjectList = () => {
 
   const projects = [
     {
-      title: "Weabers",
+      title: "MethodMelody",
       description:
-        "Founded in 2015, Weabers has become a name of trust for improving the experience in business and human behavior-centric digital ecosystems. They are helping brands and startups with interactive designs, modern websites, and mobile apps.",
-      liveLink: "https://weabers.com/",
+        "MethodMelody is the first streaming platform in Bangladesh that gives you the opportunity to learn your desired musical instrument. MethodMelody offers hundreds of video lessons across a variety of instruments, singing, and even music production.",
+      liveLink: "https://methodmelody.com/",
       stacks: ["React", "Redux", "SCSS", "MERN"],
     },
     {
