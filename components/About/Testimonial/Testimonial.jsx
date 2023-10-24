@@ -9,6 +9,14 @@ import ButtonPrimary from "@/components/Button/ButtonPrimary";
 const Testimonial = ({
   listTestimoni = [
     {
+      name: "Harris Osserman",
+      image: "/assets/images/harris.jpg",
+      designation: "Founder, Talk Hiring",
+      rating: "5",
+      testimoni:
+        "Rijon has been amazing to work with. First of all, he is an incredibly motivated freelancer. He works so hard to get the features done, and as someone running a company, I am impressed by his work ethic. The quality of his code, especially on the frontend, is extremely high. He consistently writes modular, well-thought-out code. He works really well with designers/figma files, and can follow instructions clearly. I still work with him after hundreds of hours together, and plan to continue working together for a long time.",
+    },
+    {
       name: "Tanjin Alam",
       image: "/assets/images/piash.jpg",
       designation: "Blockchain Engineer@Anchor Block",
@@ -23,6 +31,14 @@ const Testimonial = ({
       rating: "4.5",
       testimoni:
         "While working with him, I found that he has some extraordinary problem solving skills which makes him a good software developer. He is also a quick learner, always tries to learn new things of his working stack, never wants to waste time on watching movies or films, rather he utilizes his leisure by watching different stack related tutorial. In a nutshell, he is a very passionate programmer and an honest hardworking guy.",
+    },
+    {
+      name: "Harris Osserman",
+      image: "/assets/images/harris.jpg",
+      designation: "Founder, Talk Hiring",
+      rating: "5",
+      testimoni:
+        "Rijon has been amazing to work with. First of all, he is an incredibly motivated freelancer. He works so hard to get the features done, and as someone running a company, I am impressed by his work ethic. The quality of his code, especially on the frontend, is extremely high. He consistently writes modular, well-thought-out code. He works really well with designers/figma files, and can follow instructions clearly. I still work with him after hundreds of hours together, and plan to continue working together for a long time.",
     },
     {
       name: "Tanjin Alam",
