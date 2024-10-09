@@ -13,37 +13,68 @@ const ExampleComponent = () => {
 
   const companyList = [
     {
-      name: "Jatri",
+      name: "Educhain.io",
       key: 0,
-      designation: "Software Engineer",
-      duration: "Dec 2022 - Present",
+      designation: "Frontend engineer - Ontario, Canada (Remote)",
+      duration: "Dec 2023 - Present",
       responsibility: [
-        "Enhanced the ticket searching feature with advanced filtering options for improved user experience.",
-        "Created dynamic sliders for auto-scrolling headlines, offers, promos, and blogs.",
-        "Integrated third-party APIs and revamped the UI for seamless integration.",
-        "Conducted code refactoring and component reuse to optimize development efficiency.",
-        "Ensured fast-loading performance of the website.",
+        "Led the frontend development of a credential management platform, improving performance and scalability.",
+        "Developed 'The Publisher' using Next.js and Ant Design, enhancing content management and user adoption.",
+        "Built 'The Academic Passport' with Next.js and Docker, reducing credential verification time by 40% and increasing user trust.",
+        "Added test functions using Jest for all components in both 'The Publisher' and 'The Academic Passport,' enhancing code reliability and maintainability.",
+        "Redesigned UI components with Ant Design, improving user engagement and reducing bounce rates.",
+        // "Implemented RabbitMQ for real-time communication in the frontend, improving the responsiveness and scalability of both 'The Publisher' and 'The Academic Passport.'",
+        // "Redesigned the Credential Viewer page with tabbed navigation, status tracking, and hover interactions.",
+        "Integrated and optimized various third-party APIs, including identity verification systems.",
+        "Developed reusable UI components for faster development across multiple projects.",
+        "Ensured high-quality user experience by enhancing accessibility and implementing responsive design.",
       ],
     },
-
     {
-      name: "Shellbeehaken",
+      name: "Hire Rewards (Talk Hiring)",
       key: 1,
-      designation: "Software Engineer",
+      designation: "Frontend engineer - NewYork, NY (Remote)",
+      duration: "May 2023 - Jun 2024",
+      responsibility: [
+        "Developed complex job search components for small and large devices and improved job search performance, resulting in over a 2x increase in revenue for the product.",
+        "Redesigned 13 job filters with custom range sliders, multi-selects, and reset functionality, managing complex states.",
+        "Enhanced job seeker onboarding flow with user-friendly components, resulting in a 3x increase in onboarding completion.",
+        "Conducted code refactoring, eliminating unused code and promoting modular-based development.",
+        "Maintained a top-rated status on Upwork with consistent 5-star client ratings.",
+      ],
+    },
+    {
+      name: "Jatri Service Limited",
+      key: 2,
+      designation: "Frontend engineer - Gulshan - 2, Bangladesh (Onsite)",
+      duration: "Dec 2022 - Nov 2023",
+      responsibility: [
+        "Developed a dynamic website for multiple vendors that increased website traffic by 1.5x.",
+        "The improved user experience by 20% with advanced ticket-searching features.",
+        "Created dynamic sliders for auto-scrolling headlines, offers, promos, form validation, and blogs.",
+        "Reduced development time by 30% with seamless integration of third-party APIs and revamped UI.",
+        "Developed complex seat view components for Bus and Launch service.",
+        "Built an admin panel from scratch to manage Bus and Launch services.",
+        "Played a key role in code review, code merge, and deployment via Termius to the server.",
+      ],
+    },
+    {
+      name: "Shellbeehaken Limited",
+      key: 3,
+      designation: "Software engineer - Mirpur, Bangladesh (Onsite)",
       duration: "Jan 2022 - Nov 2022",
       responsibility: [
+        "Led the development of a virtual company management platform, including company creation flow, Stripe integration, and plan-based template access.",
         "Implemented pre-rendering techniques with static generation and server-side rendering.",
-        "Developed dynamic pagination, form validation, and animation features.",
-        "Added Google Analytics for tracking website traffic and user behavior.",
-        "Utilized Redux for efficient state management in Next.js projects.",
         "Enhanced SEO compatibility through dynamic metadata generation.",
+        "Developed dynamic pagination, form validation, and animation features.",
+        "Utilized Redux for efficient state management in Next.js projects.",
       ],
     },
-
     {
       name: "Weabers",
-      key: 2,
-      designation: "Software Developer",
+      key: 4,
+      designation: "Software Developer - Bhatara, Bangladesh (Onsite)",
       duration: "Jan 2021 - Dec 2021",
       responsibility: [
         "Implemented a metronome feature to help musicians maintain steady time during practice sessions.",
@@ -79,7 +110,7 @@ const ExampleComponent = () => {
             <div className="flex flex-row sm:flex-col mb-8 sm:mb-0">
               {companyList.map((company) => (
                 <h1
-                  key={company.key}
+                  key={company.name}
                   onClick={() => handleCompanySelect(company.key)}
                   className={`py-2 sm:py-3 px-6 sm:px-10 cursor-pointer hover:bg-thirdly font-bold md:font-semibold text-sm md:text-xl whitespace-nowrap mb-px transition-colors duration-300 text-secondary ${
                     company.key === selectedCompany && "bg-thirdly"

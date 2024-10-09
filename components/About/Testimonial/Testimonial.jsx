@@ -17,6 +17,13 @@ const Testimonial = ({
         "Rijon has been amazing to work with. First of all, he is an incredibly motivated freelancer. He works so hard to get the features done, and as someone running a company, I am impressed by his work ethic. The quality of his code, especially on the frontend, is extremely high. He consistently writes modular, well-thought-out code. He works really well with designers/figma files, and can follow instructions clearly. I still work with him after hundreds of hours together, and plan to continue working together for a long time.",
     },
     {
+      name: "Nick Bonanno",
+      image: "/assets/images/nick.jpeg",
+      designation: "Founder & CEO, Simple Media, LLC",
+      rating: "5",
+      testimoni: "While working with him, I quickly realized that his problem-solving skills are exceptional. He approaches challenges with a clear and focused mind, often coming up with efficient solutions that demonstrate his deep understanding of software development. His ability to quickly learn and adapt is impressive, always staying up-to-date with the latest tools and technologies in his field."
+    },
+    {
       name: "Tanjin Alam",
       image: "/assets/images/piash.jpg",
       designation: "Blockchain Engineer@Anchor Block",
@@ -39,6 +46,13 @@ const Testimonial = ({
       rating: "5",
       testimoni:
         "Rijon has been amazing to work with. First of all, he is an incredibly motivated freelancer. He works so hard to get the features done, and as someone running a company, I am impressed by his work ethic. The quality of his code, especially on the frontend, is extremely high. He consistently writes modular, well-thought-out code. He works really well with designers/figma files, and can follow instructions clearly. I still work with him after hundreds of hours together, and plan to continue working together for a long time.",
+    },
+    {
+      name: "Nick Bonanno",
+      image: "/assets/images/nick.jpeg",
+      designation: "Founder & CEO, Simple Media, LLC",
+      rating: "5",
+      testimoni: "While working with him, I quickly realized that his problem-solving skills are exceptional. He approaches challenges with a clear and focused mind, often coming up with efficient solutions that demonstrate his deep understanding of software development. His ability to quickly learn and adapt is impressive, always staying up-to-date with the latest tools and technologies in his field."
     },
     {
       name: "Tanjin Alam",

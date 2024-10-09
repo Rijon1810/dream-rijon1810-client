@@ -17,6 +17,22 @@ const Skill = () => {
       iconPath: "/assets/icon/next.png",
     },
     {
+      name: "Vue JS",
+      iconPath: "/assets/icon/vue.png",
+    },
+    {
+      name: "Nuxt JS",
+      iconPath: "/assets/icon/nuxt.png",
+    },
+    {
+      name: "Redux",
+      iconPath: "/assets/icon/redux.png",
+    },
+    {
+      name: "Pinia",
+      iconPath: "/assets/icon/pinia.png",
+    },
+    {
       name: "Tailwind CSS",
       iconPath: "/assets/icon/tailwindcss.png",
     },

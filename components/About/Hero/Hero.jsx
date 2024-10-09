@@ -5,7 +5,6 @@ import ButtonPrimary from "@/components/Button/ButtonPrimary";
 import ScrollAnimationWrapper from "@/layouts/ScrollAnimationWrapper";
 import getScrollAnimation from "@/utils/getScrollAnimation";
 
-
 const Hero = () => {
   const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
@@ -27,11 +26,17 @@ const Hero = () => {
             Hi, I'm <strong>Rijon</strong>.
           </h1>
           <p className="text-black-500 mt-4 mb-6">
-            I'm a <strong>Software Engineer</strong> at
-            <strong> Jatri Service Limited</strong>, specializing in frontend
-            web development. Currently, I'm focused on building a robust and
-            flexible <strong>frontend component library</strong> and optimizing
-            performance for our projects.
+            I'm a <strong>Senior Frontend Engineer</strong> with over 4 years of
+            experience, specializing in <strong>React</strong>,{" "}
+            <strong>Next.js</strong>, <strong>Vue.js</strong>, and{" "}
+            <strong>Tailwind CSS</strong>. I currently work remotely at{" "}
+            <strong>Educhain.io</strong> and lead my own software agency,{" "}
+            <strong>Inovixpro</strong>, where I manage a team of engineers to
+            deliver high-quality, scalable web applications. I have extensive
+            experience working on complex projects, including{" "}
+            <strong>e-commerce platforms</strong>,{" "}
+            <strong>virtual company management systems</strong>, and{" "}
+            <strong>streaming platforms</strong>.
           </p>
           <ButtonPrimary callBack={viewMyCV}>See My CV</ButtonPrimary>
         </div>
