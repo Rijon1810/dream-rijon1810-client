@@ -10,7 +10,7 @@ const Hero = () => {
 
   const viewMyCV = () => {
     window.open(
-      "https://drive.google.com/file/d/1y0TUwmfSQ0CKbYXE4XBLdL3XCz49Qc-j/view?usp=sharing",
+      "https://drive.google.com/file/d/1v6Ej9LBCDUyf4sl-vjsB_sSvYtdIMr83/view?usp=sharing",
       "_blank"
     );
   };
