@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 const ProjectListPage = () => {
@@ -9,13 +10,19 @@ const ProjectListPage = () => {
       link: "/projects/reaction-tester",
     },
   ];
+
+  const router = useRouter();
+
+  const redirect = (link) => {
+    router.push(link);
+  }
   return (
-    <div className="flex flex-col items-start justify-start sm:justify-center h-screen bg-gray-100 p-4">
-      <h1 className="text-4xl font-bold w-full text-center mt-4">Fun Projects</h1>
-      <div className="flex flex-col items-center">
+    <div className="flex flex-col items-start h-screen bg-gray-100 p-4">
+      <h1 className="text-4xl font-bold w-full text-center my-4 sm:mx-0">Fun Projects</h1>
+      <div className="flex flex-col items-center sm:items-start w-full">
         {projects.map((project) => (
-          <Link
-            href={project.link}
+          <div
+            onClick={() => redirect(project.link)}
             key={project.title}
             className="m-4 p-4 border border-gray-300 rounded-lg"
           >
@@ -24,7 +31,7 @@ const ProjectListPage = () => {
             <a href={project.link} className="text-blue-500">
               View project
             </a>
-          </Link>
+          </div>
         ))}
       </div>
     </div>
