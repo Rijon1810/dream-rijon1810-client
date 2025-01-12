@@ -10,7 +10,24 @@ const Footer = () => {
         <FooterInfoSection />
         <FooterSection
           title="Links"
-          items={[" It's Rijon", "Projects", "Blog", "Merchandies"]}
+          items={[
+            {
+              name: "Home",
+              link: "/",
+            },
+            {
+              name: "Projects",
+              link: "/projects",
+            },
+            {
+              name: "Blog",
+              link: "/blog",
+            },
+            {
+              name: "Merchandies",
+              link: "/merchandies",
+            },
+          ]}
           className="sm:col-start-7 sm:col-end-9"
         />
         <FooterSection

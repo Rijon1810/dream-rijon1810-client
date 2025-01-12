@@ -4,10 +4,14 @@ import NavLink from "@/components/Header/NavLink";
 import MobileNavigation from "@/components/Header/MobileNavigation";
 import SignIn from "@/components/SignIn";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
   const [scrollActive, setScrollActive] = useState(false);
+  const router = useRouter();
+
+  const isIndexPage = router.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,36 +36,46 @@ const Header = () => {
           <div className="col-start-1 col-end-2 flex items-center">
             <BrandImage className="h-8 w-auto" />
           </div>
-          <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500 items-center">
-            <NavLink
-              to="about"
-              activeLink={activeLink}
-              setActiveLink={setActiveLink}
-            >
-              It's Rijon
-            </NavLink>
-            <NavLink
-              to="projects"
-              activeLink={activeLink}
-              setActiveLink={setActiveLink}
-            >
-              Projects
-            </NavLink>
-            <NavLink
-              to="blog"
-              activeLink={activeLink}
-              setActiveLink={setActiveLink}
-            >
-              Blog
-            </NavLink>
-            <NavLink
-              to="merchandise"
-              activeLink={activeLink}
-              setActiveLink={setActiveLink}
-            >
-              Merchandise
-            </NavLink>
-          </ul>
+          {isIndexPage && (
+            <ul className="hidden lg:flex col-start-4 col-end-8 text-black-500 items-center">
+              <NavLink
+                to="about"
+                activeLink={activeLink}
+                setActiveLink={setActiveLink}
+              >
+                It's Rijon
+              </NavLink>
+              <NavLink
+                to="skills"
+                activeLink={activeLink}
+                setActiveLink={setActiveLink}
+              >
+                Skills
+              </NavLink>
+              <NavLink
+                to="experiences"
+                activeLink={activeLink}
+                setActiveLink={setActiveLink}
+              >
+                Experiences
+              </NavLink>
+              <NavLink
+                to="projects"
+                activeLink={activeLink}
+                setActiveLink={setActiveLink}
+              >
+                Projects
+              </NavLink>
+              <NavLink
+                to="testimonial"
+                activeLink={activeLink}
+                setActiveLink={setActiveLink}
+              >
+                Testimonial
+              </NavLink>
+            </ul>
+          )}
+
           {/* <div className="col-start-10 col-end-12 font-medium flex justify-end items-center">
             <SignIn />
             <ButtonOutline>Sign Up</ButtonOutline>

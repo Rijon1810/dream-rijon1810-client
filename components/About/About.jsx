@@ -8,7 +8,6 @@ const About = () => {
   return (
     <div
       className="max-w-screen-xl mx-auto"
-      id="about"
     >
       <Hero />
       <Skill />

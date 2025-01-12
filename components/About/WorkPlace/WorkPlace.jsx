@@ -15,7 +15,7 @@ const ExampleComponent = () => {
     {
       name: "Educhain.io",
       key: 0,
-      designation: "Frontend engineer - Ontario, Canada (Remote)",
+      designation: "Senior Frontend engineer - Ontario, Canada (Remote)",
       duration: "Dec 2023 - Present",
       responsibility: [
         "Led the frontend development of a credential management platform, improving performance and scalability.",
@@ -33,7 +33,7 @@ const ExampleComponent = () => {
     {
       name: "Hire Rewards (Talk Hiring)",
       key: 1,
-      designation: "Frontend engineer - NewYork, NY (Remote)",
+      designation: "Senior Frontend engineer - NewYork, NY (Remote)",
       duration: "May 2023 - Jun 2024",
       responsibility: [
         "Developed complex job search components for small and large devices and improved job search performance, resulting in over a 2x increase in revenue for the product.",
@@ -95,7 +95,7 @@ const ExampleComponent = () => {
   const jobResponsibility = companyList[selectedCompany].responsibility;
 
   return (
-    <ScrollAnimationWrapper>
+    <ScrollAnimationWrapper id="experiences">
       <motion.div
         className="w-11/12 sm:w-full md:w-10/12 mx-auto xl:min-h-20"
         variants={scrollAnimation}

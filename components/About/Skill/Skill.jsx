@@ -59,7 +59,7 @@ const Skill = () => {
   ];
 
   return (
-    <div className="relative w-full flex">
+    <div className="relative w-full flex" id="skills">
       <ScrollAnimationWrapper className="rounded-lg w-full  py-9 divide-y-2 sm:divide-y-0 sm:divide-x-2 divide-gray-100 bg-white-500 z-10">
         <div className="text-xl lg:text-2xl xl:text-3xl font-medium text-black-600 leading-normal">
           <strong>I'm skilled at</strong>

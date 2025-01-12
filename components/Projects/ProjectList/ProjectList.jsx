@@ -36,7 +36,7 @@ const ProjectList = () => {
   };
 
   return (
-    <div className="flex flex-col bg-white-500">
+    <div className="flex flex-col bg-white-500" id="projects">
       <h1 className="font-bold my-6 mb:my-8 lg:my-10 text-3xl leading-10 md:text-4xl lg:text-5xl text-center text-primary">
         My Projects
       </h1>

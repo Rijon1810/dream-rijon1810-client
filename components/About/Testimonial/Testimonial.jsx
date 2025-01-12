@@ -129,7 +129,7 @@ const Testimonial = ({
     window.open(recommendationLink, "_blank");
   };
   return (
-    <div className="flex flex-col w-full my-4  bg-white-500">
+    <div className="flex flex-col w-full my-4  bg-white-500" id="testimonial">
       <h1 className="font-bold my-6 mb:my-8 lg:my-10 text-3xl leading-10 md:text-4xl lg:text-5xl text-center text-primary">
         Thoughts about me
       </h1>

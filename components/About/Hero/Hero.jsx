@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <ScrollAnimationWrapper>
+    <ScrollAnimationWrapper id="about">
       <motion.div
         className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 py-6 sm:py-16"
         variants={scrollAnimation}
