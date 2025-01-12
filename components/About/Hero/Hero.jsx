@@ -26,7 +26,7 @@ const Hero = () => {
             Hi, I'm <strong>Rijon</strong>.
           </h1>
           <p className="text-black-500 mt-4 mb-6">
-            I'm a <strong>Senior Frontend Engineer</strong> with over 4 years of
+            I'm a <strong>Senior Frontend Engineer</strong> with over 5 years of
             experience, specializing in <strong>React</strong>,{" "}
             <strong>Next.js</strong>, <strong>Vue.js</strong>, and{" "}
             <strong>Tailwind CSS</strong>. I currently work remotely at{" "}
