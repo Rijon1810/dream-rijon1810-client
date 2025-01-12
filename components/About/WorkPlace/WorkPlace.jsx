@@ -107,19 +107,20 @@ const ExampleComponent = () => {
         </div>
         <div className="w-full flex flex-col sm:flex-row">
           <div className="flex">
-            <div className="flex flex-row sm:flex-col mb-8 sm:mb-0">
+            <div className="flex flex-row sm:flex-col mb-8 sm:mb-0 overflow-x-auto">
               {companyList.map((company) => (
                 <h1
                   key={company.name}
                   onClick={() => handleCompanySelect(company.key)}
                   className={`py-2 sm:py-3 px-6 sm:px-10 cursor-pointer hover:bg-thirdly font-bold md:font-semibold text-sm md:text-xl whitespace-nowrap mb-px transition-colors duration-300 text-secondary ${
-                    company.key === selectedCompany && "bg-thirdly"
+                    company.key === selectedCompany ? "bg-thirdly" : ""
                   }`}
                 >
                   {company.name}
                 </h1>
               ))}
             </div>
+
             <div className="hidden sm:block relative bg-[#D0DCF2] w-0.5 h-full">
               <div
                 className="absolute top-0 left-0 w-full bg-secondary transform transition-transform duration-300 ease"

@@ -69,7 +69,7 @@ export default function ReactionTester() {
         <div className="mt-4 text-lg">
           Your reaction time: <span className="font-bold">{reactionTime}ms</span>
           {reactionTime === highScore && (
-            <div className="text-green-500 font-bold">New High Score!</div>
+            <div className="text-green-500 font-bold">🥇 New High Score!</div>
           )}
         </div>
       )}

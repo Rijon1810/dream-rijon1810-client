@@ -10,7 +10,7 @@ const ProjectListPage = () => {
     },
   ];
   return (
-    <div className="flex flex-col items-start justify-start h-screen bg-gray-100 p-4">
+    <div className="flex flex-col items-start justify-start sm:justify-center h-screen bg-gray-100 p-4">
       <h1 className="text-4xl font-bold w-full text-center mt-4">Fun Projects</h1>
       <div className="flex flex-col items-center">
         {projects.map((project) => (
