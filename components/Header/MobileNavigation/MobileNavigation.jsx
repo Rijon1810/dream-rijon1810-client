@@ -3,7 +3,7 @@ import MobileNavLink from "@/components/Header/MobileNavLink";
 const MobileNavigation = ({ activeLink, setActiveLink }) => (
   <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-4 sm:px-8 shadow-t">
     <div className="bg-white-500 sm:px-3">
-      <ul className="flex w-full justify-between items-center text-black-500">
+      <ul className="flex w-full justify-between items-center text-black-500 overflow-x-auto">
         <MobileNavLink
           to="about"
           activeLink={activeLink}
@@ -12,21 +12,28 @@ const MobileNavigation = ({ activeLink, setActiveLink }) => (
           About
         </MobileNavLink>
         <MobileNavLink
-          to="feature"
+          to="skills"
           activeLink={activeLink}
           setActiveLink={setActiveLink}
         >
-          Feature
+          Skills
         </MobileNavLink>
         <MobileNavLink
-          to="pricing"
+          to="experiences"
           activeLink={activeLink}
           setActiveLink={setActiveLink}
         >
-          Pricing
+          Experiences
         </MobileNavLink>
         <MobileNavLink
-          to="testimoni"
+          to="projects"
+          activeLink={activeLink}
+          setActiveLink={setActiveLink}
+        >
+          Projects
+        </MobileNavLink>
+        <MobileNavLink
+          to="testimonial"
           activeLink={activeLink}
           setActiveLink={setActiveLink}
         >

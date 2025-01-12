@@ -82,8 +82,14 @@ const Header = () => {
           </div> */}
         </nav>
       </header>
-
-      <MobileNavigation activeLink={activeLink} setActiveLink={setActiveLink} />
+      {isIndexPage ? (
+        <MobileNavigation
+          activeLink={activeLink}
+          setActiveLink={setActiveLink}
+        />
+      ) : (
+        <></>
+      )}
     </>
   );
 };
