@@ -7,7 +7,7 @@ import ProjectList from "@/components/Projects/ProjectList";
 const About = () => {
   return (
     <div
-      className="max-w-screen-xl mx-auto"
+      className="max-w-screen-xl mx-auto px-6"
     >
       <Hero />
       <Skill />
