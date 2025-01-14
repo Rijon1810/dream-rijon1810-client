@@ -9,6 +9,11 @@ const ProjectListPage = () => {
       description: "A simple reaction tester game",
       link: "/projects/reaction-tester",
     },
+    {
+      title: "Memory Blitz",
+      description: "A simple memory game",
+      link: "/projects/memory-blitz",
+    },
   ];
 
   const router = useRouter();
