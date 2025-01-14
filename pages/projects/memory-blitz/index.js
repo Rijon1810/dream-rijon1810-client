@@ -12,7 +12,6 @@ const MemoryGrid = () => {
   const [message, setMessage] = useState("");
   const [timeLeft, setTimeLeft] = useState(0);
 
-
   const highlightDuration = 1000;
   const userTimeLimit = 3000;
   const numBoxesToHighlight = 1;
@@ -39,8 +38,7 @@ const MemoryGrid = () => {
     if (message === "You Win!") {
       const audio = new Audio("/sounds/win.mp3");
       audio.play();
-    }
-    else if (message === "You Lose!") {
+    } else if (message === "You Lose!") {
       const audio = new Audio("/sounds/fail.mp3");
       audio.play();
     }
@@ -130,9 +128,11 @@ const MemoryGrid = () => {
   }, [gridSize]);
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-orange-500 mb-6">Memory Blitz</h1>
-      <div className="flex items-center space-x-4 mb-6">
+    <div className="flex flex-col items-center p-4 bg-gray-100 min-h-screen">
+      <h1 className="text-3xl font-bold text-orange-500 mb-6 text-center">
+        Memory Blitz
+      </h1>
+      <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6">
         <div>
           <label className="text-black-600 mr-2">Rows:</label>
           <input
@@ -180,10 +180,10 @@ const MemoryGrid = () => {
         </div>
       )}
       <div
-        className="grid gap-2 mt-6"
+        className="grid gap-2 mt-6 w-full max-w-xl"
         style={{
-          gridTemplateRows: `repeat(${gridSize.rows}, 50px)`,
-          gridTemplateColumns: `repeat(${gridSize.cols}, 50px)`,
+          gridTemplateRows: `repeat(${gridSize.rows}, minmax(40px, 1fr))`,
+          gridTemplateColumns: `repeat(${gridSize.cols}, minmax(40px, 1fr))`,
         }}
       >
         {grid.map((row, rowIndex) =>
@@ -191,12 +191,13 @@ const MemoryGrid = () => {
             <div
               key={box.id}
               onClick={() => handleBoxClick(box.id)}
-              className={`w-12 h-12 flex justify-center items-center rounded cursor-pointer ${box.isHighlighted
-                ? "bg-orange-500 shadow-orange-md"
-                : userSelection.includes(box.id)
-                  ? "bg-green-500"
-                  : "bg-gray-100 border border-gray-400"
+              className={`flex justify-center items-center rounded cursor-pointer border ${box.isHighlighted
+                  ? "bg-orange-500 shadow-orange-md"
+                  : userSelection.includes(box.id)
+                    ? "bg-green-500"
+                    : "bg-gray-100 border-gray-400"
                 } hover:shadow-lg`}
+              style={{ minWidth: 40, minHeight: 40 }}
             />
           ))
         )}
