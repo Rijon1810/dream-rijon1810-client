@@ -11,11 +11,10 @@ const MemoryGrid = () => {
   const [isUserTurn, setIsUserTurn] = useState(false);
   const [message, setMessage] = useState("");
   const [timeLeft, setTimeLeft] = useState(0);
-  const [difficulty, setDifficulty] = useState(2);
+  const [difficulty, setDifficulty] = useState("easy");
   const [windowWidth, setWindowWidth] = useState(0);
+  const [isHighlighting, setIsHighlighting] = useState(false);
 
-  const highlightDuration = 1000;
-  const userTimeLimit = 3000;
 
   const userSelectionRef = useRef(userSelection);
 
@@ -91,16 +90,96 @@ const MemoryGrid = () => {
     );
   };
 
-  const startGame = () => {
+  const getHighlightDuration = (difficulty, totalBoxes) => {
+    let duration;
+
+    // Base highlight duration
+    const baseDuration = 1000; // 1 second
+
+    if (difficulty === "easy") {
+      duration = baseDuration + 500; // Add buffer for easy
+    } else if (difficulty === "medium") {
+      duration = baseDuration; // Standard duration for medium
+    } else if (difficulty === "hard") {
+      duration = baseDuration - 200; // Reduced time for hard
+    }
+
+    // Optionally, adjust duration based on the total number of boxes
+    if (totalBoxes > 20) {
+      duration += 200; // Add extra time for larger grids
+    }
+
+    // Ensure the duration is within reasonable limits (min 500ms, max 2000ms)
+    if (duration < 500) duration = 500;
+    if (duration > 2000) duration = 2000;
+
+    return duration;
+  };
+
+  const getNumberOfBoxesToRemember = (totalBoxes, difficulty) => {
+    let boxesToRemember;
+    if (difficulty === "easy") {
+      boxesToRemember = Math.floor(totalBoxes * 0.2); // 20% of the total boxes
+    } else if (difficulty === "medium") {
+      boxesToRemember = Math.floor(totalBoxes * 0.4); // 40% of the total boxes
+    } else if (difficulty === "hard") {
+      boxesToRemember = Math.floor(totalBoxes * 0.6); // 60% of the total boxes
+    }
+
+    return boxesToRemember;
+  };
+
+  const getTimeLimitForChoosingBoxes = (difficulty, boxesToRemember) => {
+    let timeLimit;
+
+    // Base time per box in seconds
+    const baseTimePerBox = 1;
+
+    if (difficulty === "easy") {
+      timeLimit = boxesToRemember * baseTimePerBox + 3; // Add buffer time for easy
+    } else if (difficulty === "medium") {
+      timeLimit = boxesToRemember * baseTimePerBox; // Standard time for medium
+    } else if (difficulty === "hard") {
+      timeLimit = boxesToRemember * 0.8; // Reduced time for hard
+    }
+
+    // Ensure time is within reasonable limits (min 3 seconds, max 20 seconds)
+    if (timeLimit < 3) timeLimit = 3;
+    if (timeLimit > 20) timeLimit = 20;
+
+    return timeLimit;
+  };
+
+  const startGame = (e) => {
+    e.preventDefault();
     setMessage("");
     setUserSelection([]);
     setIsUserTurn(false);
-    setTimeLeft(userTimeLimit / 1000);
+    setIsHighlighting(true);
+
+    const numberOfBoxes = gridSize.rows * gridSize.cols;
+
+    const userHighlightDuration = getHighlightDuration(
+      difficulty,
+      numberOfBoxes
+    );
+
+    const boxesToRemember = getNumberOfBoxesToRemember(
+      numberOfBoxes,
+      difficulty
+    );
+
+    const userTimeLimit = getTimeLimitForChoosingBoxes(
+      difficulty,
+      boxesToRemember
+    );
+
+    setTimeLeft(userTimeLimit);
 
     let initialGrid = generateGrid(gridSize.rows, gridSize.cols);
     let { updatedGrid, highlightedBoxes } = highlightBoxes(
       initialGrid,
-      difficulty
+      boxesToRemember
     );
 
     setGrid(updatedGrid);
@@ -109,6 +188,7 @@ const MemoryGrid = () => {
     setTimeout(() => {
       setGrid(resetHighlights(updatedGrid));
       setIsUserTurn(true);
+      setIsHighlighting(false);
 
       const timer = setInterval(() => {
         setTimeLeft((prev) => {
@@ -124,7 +204,7 @@ const MemoryGrid = () => {
           return prev - 1;
         });
       }, 1000);
-    }, highlightDuration);
+    }, userHighlightDuration);
   };
 
   const handleBoxClick = (id) => {
@@ -143,12 +223,23 @@ const MemoryGrid = () => {
     setGrid(generateGrid(gridSize.rows, gridSize.cols));
   }, [gridSize]);
 
+  const resetGame = () => {
+    setGridSize({ rows: 4, cols: 4 });
+    setGrid([]);
+    setHighlightedBoxes([]);
+    setUserSelection([]);
+    setIsUserTurn(false);
+    setMessage("");
+    setTimeLeft(0);
+    setDifficulty("easy");
+  };
+
   return (
     <div className="flex flex-col items-center p-4 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold text-orange-500 mb-6 text-center">
+      <h1 className="text-3xl font-bold text-orange-500 my-6 text-center">
         Memory Blitz
       </h1>
-      <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
+      <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-6">
         <div className="flex flex-col items-start">
           <label className="text-lg font-semibold text-gray-700 mb-2">
             Rows x Cols:
@@ -158,15 +249,12 @@ const MemoryGrid = () => {
             onChange={(e) => {
               const [rows, cols] = e.target.value.split("x").map(Number);
               setGridSize({ rows, cols });
-              if (difficulty > rows * cols) {
-                setDifficulty(rows * cols);
-              }
             }}
             className="w-[200px] border-2 border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-orange-500 focus:outline-none transition-all ease-in-out duration-200 hover:border-gray-500"
           >
-            {Array.from({ length: maxColumns }, (_, i) => (
-              <option key={i} value={`${i + 1}x${i + 1}`}>
-                {i + 1} x {i + 1}
+            {Array.from({ length: maxColumns - 1 }, (_, i) => (
+              <option key={i} value={`${i + 3}x${i + 3}`}>
+                {i + 3} x {i + 3}
               </option>
             ))}
           </select>
@@ -178,51 +266,41 @@ const MemoryGrid = () => {
           </label>
           <select
             value={difficulty}
-            onChange={(e) =>
-              setDifficulty(
-                Math.min(
-                  parseInt(e.target.value) || 2,
-                  gridSize.rows * gridSize.cols
-                )
-              )
-            }
+            onChange={(e) => setDifficulty(e.target.value)}
             className="w-[200px] border-2 border-gray-300 p-3 rounded-lg shadow-sm focus:ring-2 focus:ring-orange-500 focus:outline-none transition-all ease-in-out duration-200 hover:border-gray-500"
           >
-            {Array.from({ length: gridSize.rows * gridSize.cols }, (_, i) => (
-              <option key={i} value={i + 1}>
-                {i + 1}
-              </option>
-            ))}
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
           </select>
         </div>
       </div>
-
-      <button
-        onClick={startGame}
-        className="bg-orange-500 text-white-300 px-6 py-2 rounded shadow-lg hover:bg-orange-600 transition duration-300"
-      >
-        Start Game
-      </button>
-      {isUserTurn && (
-        <div className="text-lg font-semibold text-green-500 mt-4">
-          Time Left: <span className="text-orange-500">{timeLeft}s</span>
-        </div>
-      )}
       {message && (
         <div
-          className={`mt-6 px-8 py-4 rounded-lg shadow-lg text-2xl font-semibold text-center ${
-            message === "You Win!"
+          className={`my-6  px-8 pb-4 rounded-lg shadow-lg text-2xl font-semibold text-center ${message === "You Win!"
               ? "bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-white animate-pulse"
               : "bg-gradient-to-r from-red-400 via-red-500 to-red-600 text-white animate-bounce"
-          }`}
+            }`}
         >
           {message === "You Win!"
             ? "🎉 Congratulations, You Win! 🎉"
             : "💔 Oh no, You Lose! Try Again! 💔"}
         </div>
       )}
+      {isUserTurn && (
+        <div className="text-lg font-semibold text-green-500 mb-3">
+          Time Left:{" "}
+          <span className="text-orange-500">{timeLeft.toFixed(1)}s</span>
+        </div>
+      )}
+      {isHighlighting && (
+        <div className="text-md text-center font-bold text-orange-500 mb-3 animate-pulse">
+          Highlighting boxes...  <br/> Get ready to memorize!
+        </div>
+      )}
+
       <div
-        className="grid gap-2 mt-6 max-w-xl"
+        className="grid gap-2 max-w-xl"
         style={{
           gridTemplateRows: `repeat(${gridSize.rows}, minmax(40px, 1fr))`,
           gridTemplateColumns: `repeat(${gridSize.cols}, minmax(40px, 1fr))`,
@@ -233,13 +311,12 @@ const MemoryGrid = () => {
             <div
               key={box.id}
               onClick={() => handleBoxClick(box.id)}
-              className={`flex justify-center items-center rounded cursor-pointer border ${
-                box.isHighlighted
+              className={`flex justify-center items-center rounded cursor-pointer border ${box.isHighlighted
                   ? "bg-orange-500 shadow-orange-md border-gray-100"
                   : userSelection.includes(box.id)
-                  ? "bg-green-500 border-gray-100"
-                  : "bg-gray-100 border-gray-400"
-              } hover:shadow-lg`}
+                    ? "bg-green-500 border-gray-100"
+                    : "bg-gray-100 border-gray-400"
+                } hover:shadow-lg`}
               style={{ maxWidth: 40, maxHeight: 40 }}
             />
           ))
@@ -247,6 +324,23 @@ const MemoryGrid = () => {
       </div>
       {message === "You Win!" && (
         <Confetti width={width} height={height} recycle={false} />
+      )}
+      {!message && !isUserTurn && !isHighlighting && (
+        <button
+          onClick={(e) => startGame(e)}
+          className={`mt-6 bg-green-500 text-white-300 px-6 py-2 rounded shadow-lg transition duration-300`}
+        >
+          Start Game
+        </button>
+      )}
+
+      {message && (
+        <button
+          onClick={resetGame}
+          className="mt-6 bg-orange-500 text-white-500 px-6 py-2 rounded shadow-lg transition duration-300"
+        >
+          Reset
+        </button>
       )}
     </div>
   );
