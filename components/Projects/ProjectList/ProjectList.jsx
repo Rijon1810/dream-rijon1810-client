@@ -2,6 +2,7 @@ import ScrollAnimationWrapper from "@/layouts/ScrollAnimationWrapper";
 import getScrollAnimation from "@/utils/getScrollAnimation";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo } from "react";
 
 const ProjectList = () => {
@@ -37,9 +38,9 @@ const ProjectList = () => {
 
   return (
     <div className="flex flex-col bg-white-500" id="projects">
-      <h1 className="font-bold my-6 mb:my-8 lg:my-10 text-3xl leading-10 md:text-4xl lg:text-5xl text-center text-primary">
+      <Link href="/projects"  className="font-bold my-6 mb:my-8 lg:my-10 text-3xl leading-10 md:text-4xl lg:text-5xl text-center text-primary">
         My Projects
-      </h1>
+      </Link>
       <div className="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-12 py-8 lg:py-12 px-6 sm:px-0 lg:px-6">
         {projects.map((project, index) => (
           <ScrollAnimationWrapper className="flex justify-center " key={index}>
