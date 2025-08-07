@@ -33,7 +33,7 @@ const ExampleComponent = () => {
     {
       name: "Hire Rewards (Talk Hiring)",
       key: 1,
-      designation: "Senior Frontend engineer - NewYork, NY (Remote)",
+      designation: "Senior Fullstack engineer - NewYork, NY (Remote)",
       duration: "May 2023 - Jun 2024",
       responsibility: [
         "Developed complex job search components for small and large devices and improved job search performance, resulting in over a 2x increase in revenue for the product.",
