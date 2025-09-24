@@ -172,23 +172,7 @@ const MemoryGrid = () => {
     const userTimeLimit = getTimeLimitForChoosingBoxes(
       difficulty,
       boxesToRemember
-    );
-
-    setTimeLeft(userTimeLimit);
-
-    let initialGrid = generateGrid(gridSize.rows, gridSize.cols);
-    let { updatedGrid, highlightedBoxes } = highlightBoxes(
-      initialGrid,
-      boxesToRemember
-    );
-
-    setGrid(updatedGrid);
-    setHighlightedBoxes(highlightedBoxes);
-
-    setTimeout(() => {
-      setGrid(resetHighlights(updatedGrid));
-      setIsUserTurn(true);
-      setIsHighlighting(false);
+    );g(false);
 
       const timer = setInterval(() => {
         setTimeLeft((prev) => {
@@ -277,19 +261,7 @@ const MemoryGrid = () => {
       </div>
       {message && (
         <div
-          className={`my-6  px-8 pb-4 rounded-lg shadow-lg text-2xl font-semibold text-center ${message === "You Win!"
-              ? "bg-gradient-to-r from-green-400 via-green-500 to-green-600 text-white animate-pulse"
-              : "bg-gradient-to-r from-red-400 via-red-500 to-red-600 text-white animate-bounce"
-            }`}
-        >
-          {message === "You Win!"
-            ? "🎉 Congratulations, You Win! 🎉"
-            : "💔 Oh no, You Lose! Try Again! 💔"}
-        </div>
-      )}
-      {isUserTurn && (
-        <div className="text-lg font-semibold text-green-500 mb-3">
-          Time Left:{" "}
+          className={`my-6  
           <span className="text-orange-500">{timeLeft.toFixed(1)}s</span>
         </div>
       )}

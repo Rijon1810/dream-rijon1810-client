@@ -15,15 +15,7 @@ const ProjectListPage = () => {
       link: "/projects/memory-blitz",
     },
   ];
-
-  const router = useRouter();
-
-  const redirect = (link) => {
-    router.push(link);
-  }
-  return (
-    <div className="flex flex-col items-start h-screen bg-gray-100 p-4">
-      <h1 className="text-4xl font-bold w-full text-center my-4 sm:mx-0">Fun Projects</h1>
+-full text-center my-4 sm:mx-0">Fun Projects</h1>
       <div className="flex flex-col items-center sm:items-start w-full">
         {projects.map((project) => (
           <div
