@@ -14,6 +14,11 @@ const ProjectListPage = () => {
       description: "A simple memory game",
       link: "/projects/memory-blitz",
     },
+    {
+      title: "Tic Tac Toe",
+      description: "A simple neon tic tac toe game",
+      link: "/projects/tic-tac-toe",
+    },
   ];
 
   const router = useRouter();
